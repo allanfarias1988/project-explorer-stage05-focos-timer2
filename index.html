@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Temporizador Pomodoro V2" />
+    <title>Foucus Timer 2</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="main.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="toggleMode">
+        <div class="sr-only">Modo light ativado!</div>
+        <button class="ph ph-moon"></button>
+        <button class="ph ph-sun"></button>
+      </div>
+      <div class="timer-wrapper">
+        <div class="timer">
+          <span id="minutes">25</span>
+          <span>:</span>
+          <span id="seconds">00</span>
+        </div>
+
+        <div class="timer-actions">
+          <button class="icon play">
+            <i class="ph ph-play-circle secondary"></i>
+          </button>
+          <button class="icon pause">
+            <i class="ph ph-pause-circle secondary"></i>
+          </button>
+          <button class="icon stop"><i class="ph ph-stop-circle"></i></button>
+          <button class="icon plus"><i class="ph ph-plus-circle"></i></button>
+          <button class="icon minus"><i class="ph ph-minus-circle"></i></button>
+        </div>
+      </div>
+      <div class="music-actions">
+        <button class="icon">
+          <i class="ph ph-park" data-action="park"></i>
+        </button>
+        <button class="icon">
+          <i class="ph ph-cloud-snow" data-action="cloudSnow"></i>
+        </button>
+        <button class="icon">
+          <i class="ph ph-storefront" data-action="storeFront"></i>
+        </button>
+        <button class="icon">
+          <i class="ph ph-fire" data-action="fire"></i>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

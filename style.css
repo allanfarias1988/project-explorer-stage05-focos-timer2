@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text-color: hsla(240, 6%, 21%, 1);
+    --bg-actions-color: hsl(240, 9%, 89%);
+    --bg-color: #FFF;
+    --primary-color: hsla(194, 97%, 31%, 1);
+
+    font-size: clamp(40%, 2vw, 100%);
+}
+
+html.dark {
+    --bg-color: hsl(240, 3%, 14%);
+    --text-color: hsla(240, 9%, 89%, 1);
+}
+
+html.dark .ph-moon, html:not(.dark) .ph-sun {
+    display: none;
+}
+
+html.running .play,
+html:not(.running) .pause {
+    display: none;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    display: grid;
+    place-content: center;
+}
+
+.toggleMode {
+    padding: 2rem;
+    
+    grid-area: toggleButton;
+    justify-self: end;
+}
+
+.toggleMode button {
+    font-size: 3rem;
+    color: var(--text-color);
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+#app {
+    height: 100vh;
+    max-width: 80rem;
+    display: grid;
+    gap: 4rem;
+    place-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        ". toggleButton"
+        "clock actions";
+
+}
+
+#app>.timer-wrapper {
+
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+    font-size: 7.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    grid-area: clock;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+}
+
+.timer-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.timer-actions button {
+    width: 3.2rem;
+    height: 3.2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+}
+
+.timer-actions button i {
+    font-size: 3rem;
+}
+
+i {
+    font-size: 8.75rem;
+    color: var(--text-color);
+}
+
+.music-actions {
+    display: grid;
+    place-content: center;
+    grid-template-columns: 8.75rem 8.75rem;
+    gap: 2rem;
+
+    grid-area: actions;
+}
+
+.music-actions button {
+    border-radius: 1.5rem;
+    width: 8.75rem;
+    height: 9.375rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    background-color: var(--bg-actions-color);
+}
+
+.music-actions button i {
+    color: hsl(240, 6%, 21%);
+
+}
+
+.active {
+    background-color: var(--primary-color) !important;
+}
+
+.active i {
+    color: #FFF !important;
+}
+
+.secondary {
+    color: var(--primary-color);
+}
+
+@media (max-width: 640px) {
+    #app {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            'toggleButton'
+            'clock'
+            'actions';
+    }
+
+}
