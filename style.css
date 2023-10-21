@@ -18,13 +18,18 @@ html.dark {
     --text-color: hsla(240, 9%, 89%, 1);
 }
 
-html.dark .ph-moon, html:not(.dark) .ph-sun {
+html.dark .ph-moon,
+html:not(.dark) .ph-sun {
     display: none;
 }
 
 html.running .play,
 html:not(.running) .pause {
     display: none;
+}
+
+h1 {
+    color: var(--text-color);
 }
 
 .sr-only {
@@ -47,7 +52,7 @@ body {
 
 .toggleMode {
     padding: 2rem;
-    
+
     grid-area: toggleButton;
     justify-self: end;
 }
@@ -156,7 +161,7 @@ i {
 @media (max-width: 640px) {
     #app {
         grid-template-columns: 1fr;
-        grid-template-areas: 
+        grid-template-areas:
             'toggleButton'
             'clock'
             'actions';
